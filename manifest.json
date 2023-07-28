@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Design Principles",
   "version": "1.0",
   "description": "Displays design principles",
@@ -8,12 +8,14 @@
     "48": "icon48.png",
     "128": "icon128.png"
   },
-  "permissions": ["activeTab"],
-  "browser_action": {
+  "action": {
     "default_popup": "popup.html"
   },
+  "permissions": ["activeTab"],
+  "host_permissions": [
+    "http://localhost:3000/api/design-principles"
+  ],
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "service_worker": "background.js"
   }
 }
